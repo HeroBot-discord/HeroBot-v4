@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'MonSuperbotAvecDesPlugins'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'net.dv8tion:JDA:4.1.1_148'
+    compile 'org.reflections:reflections:0.9.12'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
+    implementation 'com.github.vladimir-bukhtoyarov:bucket4j-core:4.10.0'
+}
