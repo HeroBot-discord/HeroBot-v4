@@ -31,7 +31,7 @@ public class ConfigurationManager extends Service {
     }
 
     public String getToken() {
-        return "NDkxNjczNDgwMDA2MjA1NDYx.Xrq6tQ.dxc1qi-5LjyLIB4GUC-JkvGkdVs";
+        return System.getenv("TOKEN");
     }
 
     public String getPrefix() {

@@ -1,9 +1,12 @@
 plugins {
     id 'java'
 }
+apply plugin: 'application'
 
 group 'MonSuperbotAvecDesPlugins'
 version '1.0-SNAPSHOT'
+
+mainClassName = "fr.matthieu.herobot.Main"
 
 sourceCompatibility = 1.8
 
@@ -19,4 +22,8 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
     compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
     implementation 'com.github.vladimir-bukhtoyarov:bucket4j-core:4.10.0'
+}
+
+application {
+    mainClassName = mainClassName
 }
