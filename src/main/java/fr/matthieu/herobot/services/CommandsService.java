@@ -16,7 +16,6 @@ import fr.matthieu.herobot.services.command.parsers.discord.ChannelParser;
 import fr.matthieu.herobot.services.command.parsers.discord.RoleParser;
 import fr.matthieu.herobot.services.command.parsers.discord.UserParser;
 import fr.matthieu.herobot.utilities.ServicesContainer;
-import fr.matthieu.herobot.utilities.classes.MessageSanitizer;
 import fr.matthieu.herobot.utilities.classes.Service;
 import fr.matthieu.herobot.utilities.classes.ServicePriority;
 import fr.matthieu.herobot.utilities.classes.plugin.Plugin;
@@ -27,7 +26,6 @@ import io.github.bucket4j.Refill;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
 
@@ -38,8 +36,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.List;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -47,9 +47,9 @@ public class CommandsService extends Service {
 
     private final CommandParser parser = new CommandParser();
     private String prefix;
-    private Map<String, SimpleCommand> commands = new HashMap<>();
-    private HashMap<String, Bucket> bucket = new HashMap<>();
-    private Bandwidth limit = Bandwidth.classic(7, Refill.intervally(2, Duration.ofMinutes(1)));
+    private final Map<String, SimpleCommand> commands = new HashMap<>();
+    private final HashMap<String, Bucket> bucket = new HashMap<>();
+    private final Bandwidth limit = Bandwidth.classic(7, Refill.intervally(2, Duration.ofMinutes(1)));
     private ExecutorService executors;
 
     public CommandsService(ServicesContainer container) {
