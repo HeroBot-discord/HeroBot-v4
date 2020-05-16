@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PipelineViewerConfig">
+    <option name="gitlabAuthToken" value="" />
+    <option name="gitlabProjectId" value="18756851" />
+    <option name="gitlabUrl" value="https://gitlab.com/developers-house/dev/herobot" />
+    <option name="showLightsForBranch" value="" />
+  </component>
+</project>
