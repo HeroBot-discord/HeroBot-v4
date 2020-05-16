@@ -32,11 +32,8 @@ public class Main {
         logger.info("Loaded the core HeroBot's libraries.");
         // Initialize the current services.
         container.loadCurrentServices();
-
         FileUtilities.loadJarFilesFolder("plugins", container);
-
         container.loadCurrentServices();
-
         logger.info("Loaded HeroBot in {}ms", System.currentTimeMillis() - currentMillis);
     }
 

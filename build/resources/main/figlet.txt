@@ -1,0 +1,45 @@
+
+   __  __                       ____            __
+  /\ \/\ \                     /\  _`\         /\ \__
+  \ \ \_\ \     __   _ __   ___\ \ \L\ \    ___\ \ ,_\
+   \ \  _  \  /'__`\/\`'__\/ __`\ \  _ <'  / __`\ \ \/
+    \ \ \ \ \/\  __/\ \ \//\ \L\ \ \ \L\ \/\ \L\ \ \ \_
+     \ \_\ \_\ \____\\ \_\\ \____/\ \____/\ \____/\ \__\
+      \/_/\/_/\/____/ \/_/ \/___/  \/___/  \/___/  \/__/
+
+
+    HeroBot is a program developed to be able to handle
+    plugin like spigot or bukkit.
+
+    Our philosophy allow everyone to create their own
+    plugins for our platform. for a plugin to run in
+    the real HeroBot, this one need to contains a
+    signed certificate from the HeroBot's creators.
+
+    * Disclaimer for self-hosted instances:
+
+    HeroBot & his staff in not responsible of
+    any technical difficulties linked to our system.
+    We aren't responsible of what plugins you decide to
+    install on your self-hosted instance.
+    We may no give you support for your self-hosted
+    instance.
+
+    * You must accept some conditions in order to use
+    our product.
+
+    1. You need to credit HeroBot on your instance.
+    2. Do not say that HeroBot is yours if it's not.
+    3. Do not report HeroBot is you do illegal stuff
+       with it.
+
+    Matthieu & Co. (c) 2018 - 2020
+    All rights reserved.
+
+    Version : %version%
+    Branch  : %branch%
+    Os      : %os%
+    Arch    : %arch%
+
+
+

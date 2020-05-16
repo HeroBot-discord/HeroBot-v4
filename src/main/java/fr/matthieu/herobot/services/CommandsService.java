@@ -1,5 +1,6 @@
 package fr.matthieu.herobot.services;
 
+import com.sun.management.OperatingSystemMXBean;
 import fr.matthieu.herobot.services.command.CommandParser;
 import fr.matthieu.herobot.services.command.ParsingError;
 import fr.matthieu.herobot.services.command.SimpleCommand;
@@ -8,7 +9,12 @@ import fr.matthieu.herobot.services.command.annotations.FromMessage;
 import fr.matthieu.herobot.services.command.annotations.Inject;
 import fr.matthieu.herobot.services.command.annotations.Name;
 import fr.matthieu.herobot.services.command.parsers.IntParser;
+import fr.matthieu.herobot.services.command.parsers.LongParser;
+import fr.matthieu.herobot.services.command.parsers.PercentParser;
 import fr.matthieu.herobot.services.command.parsers.StringParser;
+import fr.matthieu.herobot.services.command.parsers.discord.ChannelParser;
+import fr.matthieu.herobot.services.command.parsers.discord.RoleParser;
+import fr.matthieu.herobot.services.command.parsers.discord.UserParser;
 import fr.matthieu.herobot.utilities.ServicesContainer;
 import fr.matthieu.herobot.utilities.classes.MessageSanitizer;
 import fr.matthieu.herobot.utilities.classes.Service;
@@ -20,11 +26,14 @@ import io.github.bucket4j.Bucket4j;
 import io.github.bucket4j.Refill;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
 
 import javax.annotation.Nullable;
 import java.awt.*;
+import java.lang.management.ManagementFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.Duration;
@@ -49,18 +58,21 @@ public class CommandsService extends Service {
 
     @Override
     public void initialize() throws Exception {
-
+        parser.registerParser(IntParser.class);
+        parser.registerParser(StringParser.class);
+        parser.registerParser(ChannelParser.class);
+        parser.registerParser(RoleParser.class);
+        parser.registerParser(UserParser.class);
+        parser.registerParser(PercentParser.class);
+        parser.registerParser(LongParser.class);
     }
 
     @Override
     public void start() throws Exception {
         this.registerEventHandlers(this);
         this.prefix = ((ConfigurationManager) this.container.getService(ConfigurationManager.class)).getPrefix();
-
-        parser.registerParser(IntParser.class);
-        parser.registerParser(StringParser.class);
         this.registerCommandClass(this, this);
-        executors = Executors.newFixedThreadPool(15);
+        executors = Executors.newFixedThreadPool(2);
     }
 
     public void registerCommandClass(Object object, Service service) {
@@ -83,8 +95,8 @@ public class CommandsService extends Service {
 
     }
 
-    @Command(name = "rate-limit", ratelimit = false)
-    public void ratelimitInfo(@Inject Bucket bucket, @Inject Message message) {
+    @Command(name = "rate-limit", rateLimit = false)
+    public void rateLimitInfo(@Inject Bucket bucket, @Inject Message message) {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setDescription(String.format("Here is some details about your rate-limit account on this guild. \r " +
                 "Each rate-limited command uses one credit on your account, your account have a size of %s tokens, and get %s more tokens every minute if your count is under %s.", limit.getInitialTokens(), limit.getRefillTokens(), limit.getInitialTokens()))
@@ -104,42 +116,34 @@ public class CommandsService extends Service {
     @Command(name = "rate-limit-consume-all")
     public void consumeAll(@Inject Bucket bucket, @Inject Message message) {
         bucket.tryConsumeAsMuchAsPossible();
-
         message.getChannel().sendMessage("`\u2705` Consumed all your rate-limit tokens.").queue();
     }
 
     @Command(name = "help")
     public void help(@Inject Message message, @Name(value = "Selected command") @FromMessage @Nullable String selectedCommand) {
-
         EmbedBuilder builder = new EmbedBuilder();
         builder.setDescription("HeroBot is a Discord bot with a plugin system.")
                 .setColor(new Color(55, 55, 55))
                 .setTimestamp(Instant.now())
                 .setFooter("Matthieu \u00A9 / 2018 - 2020");
-
         if (selectedCommand != null) {
             builder.setAuthor("HeroBot - Command help");
-
             if (this.commands.containsKey(selectedCommand)) {
-
                 SimpleCommand command = this.commands.get(selectedCommand);
                 Plugin plugin = null;
                 if (command.service instanceof Plugin) {
                     plugin = ((Plugin) command.service);
                 }
-
                 builder
-                        .addField("\0", String.format("**`%s`** \r %s", command.command.name(), command.command.desciption()), false)
+                        .addField("\0", String.format("**`%s`** \r %s", command.command.name(), command.command.description()), false)
                         .addField("Plugin", plugin != null ? plugin.getManifest().name : "HeroBot System", true)
-                        .addField("Rate-limited", command.command.ratelimit() ? "Yes" : "No", true);
+                        .addField("Rate-limited", command.command.rateLimit() ? "Yes" : "No", true);
 
                 if (plugin != null) {
                     builder.addField("Authors", String.join(" & ", plugin.getManifest().authors), true);
                 }
-
             } else {
-                builder
-                        .addField("\0", String.format("`\u274C` The command `%s` doesn't exist.", selectedCommand), true);
+                builder.addField("\0", String.format("`\u274C` The command `%s` doesn't exist.", selectedCommand), true);
             }
         } else {
             builder.setAuthor("HeroBot - General help")
@@ -149,7 +153,6 @@ public class CommandsService extends Service {
                 command.putIfAbsent(comm.service, new HashSet<>());
                 command.get(comm.service).add(comm);
             }
-
             for (Map.Entry<Service, Set<SimpleCommand>> group : command.entrySet()) {
                 StringBuilder stringBuilder = new StringBuilder();
                 for (SimpleCommand comm : group.getValue()) {
@@ -164,6 +167,51 @@ public class CommandsService extends Service {
             }
         }
         message.getChannel().sendMessage(builder.build()).queue();
+    }
+
+    @Command(name = "system-info")
+    public void systemInfo(TextChannel message) throws InterruptedException {
+        OperatingSystemMXBean system = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
+        EmbedBuilder builder = new EmbedBuilder()
+                .setDescription("Here is some details about the bot's statistics.")
+                .setColor(new Color(55, 55, 55))
+                .setTimestamp(Instant.now())
+                .setFooter("Matthieu \u00A9 / 2018 - 2020");
+        long nanoBefore = System.nanoTime();
+        long cpuBefore = system.getProcessCpuTime();
+        Thread.sleep(0x12c);
+        long cpuAfter = system.getProcessCpuTime();
+        long nanoAfter = System.nanoTime();
+        long percent;
+        if (nanoAfter > nanoBefore)
+            percent = ((cpuAfter-cpuBefore)*100L)/
+                    (nanoAfter-nanoBefore);
+        else percent = 0;
+
+        int total = message.getJDA().getTextChannels().size() + message.getJDA().getVoiceChannels().size();
+
+        builder
+                .addField("\0", "CPU Usage", false)
+                .addField("Installed processors", String.valueOf(system.getAvailableProcessors()), true)
+                .addField("CPU Load (Bot)", String.format("%s", Math.round(system.getProcessCpuLoad() * 100) / 100), true)
+                .addField("CPU Load (System)", String.format("%s", Math.round(system.getSystemCpuLoad() * 100) / 100), true)
+                .addField("% Cpu used (bot)", String.format("%s", Math.round(percent * 100) / 100), true)
+                .addField("\0", "Memory Usage", false)
+                .addField("Virtual Memory Size", String.format("%s MB",system.getCommittedVirtualMemorySize() / 1024 / 1024), true)
+                .addField("Free virtual memory", String.format("%s MB",system.getFreePhysicalMemorySize() / 1024 / 1024), true)
+                .addField("\0", "Os Informations", false)
+                .addField("Os", String.format("%s / %s",system.getName(), system.getVersion()), true)
+                .addField("Arch", system.getArch(), true)
+                .addField("\0", "Bot informations", false)
+                .addField("Guilds", String.format("%s Guilds",message.getJDA().getGuilds().size()), true)
+                .addField("Members", String.format("%s Members",message.getJDA().getUsers().size()), true)
+                .addField("Channels", String.format("%s ( %s Text, %s Categories, %s Voice )",
+                        total,
+                        message.getJDA().getTextChannels().size(),
+                        message.getJDA().getCategories().size(),
+                        message.getJDA().getVoiceChannels().size()
+                        ), true);
+        message.sendMessage(builder.build()).queue();
     }
 
     @SubscribeEvent()
@@ -182,12 +230,12 @@ public class CommandsService extends Service {
                 String commandName = message.getMessage().getContentRaw().substring(this.prefix.length()).split(" ")[0];
                 if (commands.containsKey(commandName)) {
                     SimpleCommand command = commands.get(commandName);
-                    if (!command.command.ratelimit() || userBucket.tryConsume(1)) {
-                        List<String> argsList = Arrays.asList(MessageSanitizer.sanitizeMessage(message.getMessage().getContentStripped()).split(" "));
+                    if (!command.command.rateLimit() || userBucket.tryConsume(command.command.price())) {
                         try {
-                            Object[] commandParser = parser.parseCommandArgs(argsList.subList(1, argsList.size()), command, new Object[]{
+                            Object[] commandParser = parser.parseCommandArgs(message.getMessage(), command, new Object[]{
                                     message,
                                     message.getMessage(),
+                                    message.getChannel(),
                                     message.getAuthor(),
                                     message.getMember(),
                                     message.getMessage().getContentRaw(),

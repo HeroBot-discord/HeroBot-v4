@@ -7,9 +7,9 @@ import java.security.InvalidParameterException;
 
 public class ObjectInitiator<T> {
 
-    private final Class<T> theClass;
+    private final Class<? extends T> theClass;
 
-    public ObjectInitiator(Class<T> aClass) {
+    public ObjectInitiator(Class<? extends T> aClass) {
         this.theClass = aClass;
     }
 

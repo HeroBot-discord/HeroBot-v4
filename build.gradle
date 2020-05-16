@@ -1,9 +1,19 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+    }
+}
+
 plugins {
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
     id 'java'
 }
 apply plugin: 'application'
 
-group 'MonSuperbotAvecDesPlugins'
+group 'HeroBot'
 version '1.0-SNAPSHOT'
 
 mainClassName = "fr.matthieu.herobot.Main"
@@ -19,11 +29,14 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'net.dv8tion:JDA:4.1.1_148'
     compile 'org.reflections:reflections:0.9.12'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
-    compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
-    implementation 'com.github.vladimir-bukhtoyarov:bucket4j-core:4.10.0'
+    compile 'com.github.vladimir-bukhtoyarov:bucket4j-core:4.10.0'
+    compile 'org.yaml:snakeyaml:1.26'
+    compile 'org.redisson:redisson:3.12.5'
+
+    runtime group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
 
-application {
-    mainClassName = mainClassName
+artifacts {
+    archives shadowJar
 }

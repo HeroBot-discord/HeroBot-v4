@@ -1,7 +1,8 @@
 package fr.matthieu.herobot.services.command;
 
-public interface IParser {
-    Class getTarget();
+import net.dv8tion.jda.api.entities.Message;
 
-    Object parse(String remove) throws Exception;
+public interface IParser<T> {
+    Class<T> getTarget();
+    T parse(String value, Message context) throws Exception;
 }

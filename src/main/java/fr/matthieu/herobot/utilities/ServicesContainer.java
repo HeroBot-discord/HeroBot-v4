@@ -34,15 +34,15 @@ public class ServicesContainer {
 
     public void registerService(Class<? extends Service> serviceClass) throws InvocationTargetException, InvalidClassException, InstantiationException, IllegalAccessException {
         if ((serviceClass.getModifiers() & Modifier.ABSTRACT) == 0 && !serviceClass.isInterface()) {
-            ObjectInitiator initiator = new ObjectInitiator(serviceClass);
-            Service service = (Service) initiator.buildObject(new Object[]{this});
+            ObjectInitiator<Service> initiator = new ObjectInitiator(serviceClass);
+            Service service = initiator.buildObject(new Object[] {
+                    this
+            });
             servicesMap.putIfAbsent(service.getServiceName(), service);
         }
-        return;
     }
 
     public void autoLoad(String pack) {
-
         logger.info("Auto loading package {}", pack);
         try {
             Reflections reflections = new Reflections(pack);
@@ -51,12 +51,12 @@ public class ServicesContainer {
                 try {
                     this.registerService(extendedClass);
                 } catch (InvocationTargetException | InvalidClassException | InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
+                    this.logger.error("Error while registering service {}", extendedClass.getName(), e);
                 }
             }
         } catch (ReflectionsException error) {
+            this.logger.error("Error using Reflections while scanning from {}", pack, error);
         }
-
     }
 
     public void loadCurrentServices() {
@@ -68,7 +68,7 @@ public class ServicesContainer {
         for (Service service : sortedMap.values()) {
             try {
                 long currentMillis = System.currentTimeMillis();
-                FutureTask task = service.doInitialize();
+                FutureTask<Void> task = service.doInitialize();
                 task.run();
                 task.get(100, TimeUnit.MILLISECONDS);
                 logger.info("Service {} started in {}ms", service.getServiceName(), System.currentTimeMillis() - currentMillis);
@@ -81,7 +81,7 @@ public class ServicesContainer {
         for (Service service : sortedMap.values()) {
             try {
                 long currentMillis = System.currentTimeMillis();
-                FutureTask task = service.doStart();
+                FutureTask<Void> task = service.doStart();
                 task.run();
                 task.get(6, TimeUnit.SECONDS);
                 logger.info("Service {} started in {}ms", service.getServiceName(), System.currentTimeMillis() - currentMillis);
@@ -104,7 +104,7 @@ public class ServicesContainer {
         for (Service service : sortedMap.values()) {
             try {
                 long currentMillis = System.currentTimeMillis();
-                FutureTask task = service.doShutdown();
+                FutureTask<Void> task = service.doShutdown();
                 task.run();
                 task.get(6, TimeUnit.SECONDS);
                 logger.info("Service {} started in {}ms", service.getServiceName(), System.currentTimeMillis() - currentMillis);
@@ -117,8 +117,8 @@ public class ServicesContainer {
     }
 
     public void registerService(Class<? extends Service> clas, PluginManifest pluginManifest) throws InvocationTargetException, InvalidClassException, InstantiationException, IllegalAccessException {
-        ObjectInitiator initiator = new ObjectInitiator(clas);
-        Service service = (Service) initiator.buildObject(new Object[]{this, pluginManifest});
+        ObjectInitiator<Service> initiator = new ObjectInitiator<Service>(clas);
+        Service service = initiator.buildObject(new Object[]{this, pluginManifest});
         servicesMap.putIfAbsent(service.getServiceName(), service);
     }
 }

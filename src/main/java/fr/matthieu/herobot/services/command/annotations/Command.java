@@ -12,13 +12,11 @@ import java.lang.annotation.Target;
 public @interface Command {
     String name();
 
-    String desciption() default "*pas de description*";
-
+    String description() default "*pas de description*";
     Permission[] permissions() default {};
-
     Permission[] botPermissions() default {};
-
-    String[] aliasses() default {};
-
-    boolean ratelimit() default true;
+    boolean rateLimit() default true;
+    boolean adminOnly() default false;
+    boolean enabled() default true;
+    int price() default 1;
 }

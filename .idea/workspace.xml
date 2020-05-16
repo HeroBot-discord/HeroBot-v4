@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HeroBot:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9619d9d7-0f56-4429-9134-d5f00738178a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/HeroBot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/RedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/LongParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/PercentParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/ChannelParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/RoleParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/UserParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/types/Percents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/HeroBot_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/HeroBot_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/plugins/PingPlugin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/run/plugins/PingPlugin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/DiscordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/DiscordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/RconService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/CommandParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/IParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/IParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/SimpleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/SimpleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/annotations/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/annotations/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/IntParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/IntParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/StringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/StringParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ObjectInitiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ObjectInitiator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ServicesContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ServicesContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/classes/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/classes/Service.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Matthieu\source\OBL\html" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeroBot" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeroBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeroBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeroBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="shadow" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HeroBot" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Matthieu" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="UGNXHTTH" />
+  </component>
+  <component name="ProjectId" id="1brc1HpH9mE8MOTFlFiFZKcH4nz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OBL/html" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matthieu\source\HeroBot\run\plugins" />
+      <recent name="C:\Users\Matthieu\source\HeroBot\out\artifacts\HeroBot_jar\plugins" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.matthieu.herobot.services.command.parsers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="TOKEN" value="NDkxNjczNDgwMDA2MjA1NDYx.Xr2dsw.Tzf8CxqMK8JAczaHc1CVqYJG8Ek" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="fr.matthieu.herobot.Main" />
+      <module name="HeroBot.main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeroBot [buildFatJar]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildFatJar" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [build]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [distZip]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="TOKEN" value="NDkxNjczNDgwMDA2MjA1NDYx.Xr2dsw.Tzf8CxqMK8JAczaHc1CVqYJG8Ek" />
+          </map>
+        </option>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distZip" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="installDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroBot [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.HeroBot [distZip]" />
+      <item itemvalue="Gradle.HeroBot [build]" />
+      <item itemvalue="Gradle.HeroBot [buildFatJar]" />
+      <item itemvalue="Gradle.HeroBot [dependencies]" />
+      <item itemvalue="Gradle.HeroBot [jar]" />
+      <item itemvalue="Gradle.HeroBot [run]" />
+      <item itemvalue="Gradle.HeroBot [installDist]" />
+      <item itemvalue="Gradle.HeroBot [shadowJar]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.HeroBot [shadowJar]" />
+        <item itemvalue="Gradle.HeroBot [installDist]" />
+        <item itemvalue="Gradle.HeroBot [run]" />
+        <item itemvalue="Gradle.HeroBot [jar]" />
+        <item itemvalue="Gradle.HeroBot [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9619d9d7-0f56-4429-9134-d5f00738178a" name="Default Changelist" comment="" />
+      <created>1589286582713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589286582713</updated>
+    </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <created>1589377346245</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589377346245</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Configure gradle build and add use env variables for the TOKEN.">
+      <created>1589379198208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589379198208</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="First Commit" />
+    <MESSAGE value="Configure gradle build and add use env variables for the TOKEN." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configure gradle build and add use env variables for the TOKEN." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1589523155841">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589523155841" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589629817010">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589629817010" />
+    <state x="708" y="318" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589631883876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="708" y="318" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631883876" />
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1589625229998">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589625229998" />
+    <state x="827" y="270" width="602" height="656" key="EnvironmentVariablesDialog" timestamp="1589484987469">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="827" y="270" width="602" height="656" key="EnvironmentVariablesDialog/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589484987469" />
+    <state x="818" y="360" key="FileChooserDialogImpl" timestamp="1589628269295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="818" y="360" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589628269295" />
+    <state width="1166" height="275" key="GridCell.Tab.0.bottom" timestamp="1589631275595">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1166" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631275595" />
+    <state width="1166" height="275" key="GridCell.Tab.0.center" timestamp="1589631275595">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1166" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631275595" />
+    <state width="1166" height="275" key="GridCell.Tab.0.left" timestamp="1589631275595">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1166" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631275595" />
+    <state width="1166" height="275" key="GridCell.Tab.0.right" timestamp="1589631275595">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1166" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631275595" />
+    <state x="540" y="255" key="IDE.errors.dialog" timestamp="1589528178848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589528178848" />
+    <state x="263" y="144" width="998" height="851" key="SettingsEditor" timestamp="1589631135654">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="263" y="144" width="998" height="851" key="SettingsEditor/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631135654" />
+    <state x="342" y="140" key="new project wizard" timestamp="1589484708523">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589484708523" />
+    <state x="733" y="464" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589628275536">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="733" y="464" width="621" height="521" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589628275536" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589630200536">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589630200536" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HeroBot$Main.ic" NAME="Main Coverage Results" MODIFIED="1589523862486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

@@ -11,7 +11,6 @@ public class SimpleCommand {
     public final Object instance;
     public final Service service;
 
-
     public SimpleCommand(Method method, Object instance, Command commandAnnotation, Service service) {
         this.method = method;
         this.instance = instance;

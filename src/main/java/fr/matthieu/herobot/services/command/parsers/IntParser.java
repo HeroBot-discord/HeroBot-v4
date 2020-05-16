@@ -1,15 +1,16 @@
 package fr.matthieu.herobot.services.command.parsers;
 
 import fr.matthieu.herobot.services.command.IParser;
+import net.dv8tion.jda.api.entities.Message;
 
-public class IntParser implements IParser {
+public class IntParser implements IParser<Integer> {
     @Override
-    public Class getTarget() {
+    public Class<Integer> getTarget() {
         return int.class;
     }
 
     @Override
-    public Object parse(String remove) {
-        return Integer.parseInt(remove.replace("\"", ""));
+    public Integer parse(String value, Message context) throws Exception {
+        return Integer.parseInt(value);
     }
 }

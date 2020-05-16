@@ -34,8 +34,8 @@ public abstract class Service {
 
     public abstract void kill() throws Exception;
 
-    public FutureTask doInitialize() {
-        FutureTask future = new FutureTask<>(() -> {
+    public FutureTask<Void> doInitialize() {
+        FutureTask<Void> future = new FutureTask<>(() -> {
             this.initialize();
             this.state = ServiceState.INITIALIZED;
             return null;
@@ -45,8 +45,8 @@ public abstract class Service {
         return future;
     }
 
-    public FutureTask doStart() {
-        FutureTask future = new FutureTask<>(() -> {
+    public FutureTask<Void> doStart() {
+        FutureTask<Void> future = new FutureTask<>(() -> {
             this.start();
             this.state = ServiceState.LOADED;
             return null;
@@ -56,8 +56,8 @@ public abstract class Service {
         return future;
     }
 
-    public FutureTask doShutdown() {
-        FutureTask future = new FutureTask<>(() -> {
+    public FutureTask<Void> doShutdown() {
+        FutureTask<Void> future = new FutureTask<>(() -> {
             this.shutdown();
             this.state = ServiceState.SHUTDOWN;
             return null;
@@ -67,8 +67,8 @@ public abstract class Service {
         return future;
     }
 
-    public FutureTask doKill() {
-        FutureTask future = new FutureTask<>(() -> {
+    public FutureTask<Void> doKill() {
+        FutureTask<Void> future = new FutureTask<>(() -> {
             this.kill();
             this.state = ServiceState.KILLED;
             return null;
