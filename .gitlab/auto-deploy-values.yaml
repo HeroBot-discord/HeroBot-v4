@@ -22,10 +22,10 @@ ingress:
 prometheus:
   metrics: false
 livenessProbe:
-  command: 'echo "OK"'
+  command: "echo \"OK\""
   probeType: "exec"
 readinessProbe:
-  command: 'echo "OK"'
+  command: "echo \"OK\""
   probeType: "exec"
 postgresql:
   enabled: false
