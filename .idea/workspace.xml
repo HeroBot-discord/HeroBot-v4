@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9619d9d7-0f56-4429-9134-d5f00738178a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitlab/auto-deploy-values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab/auto-deploy-values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589638847559</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Edit helm chart values for deployment">
+      <created>1589639726650</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589639726650</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -398,10 +404,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589625229998" />
-    <state x="546" y="2" key="CommitChangelistDialog2" timestamp="1589638847066">
+    <state x="546" y="2" key="CommitChangelistDialog2" timestamp="1589639726096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="546" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589638847066" />
+    <state x="546" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589639726096" />
     <state x="827" y="270" width="602" height="656" key="EnvironmentVariablesDialog" timestamp="1589484987469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -434,10 +440,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="263" y="144" width="998" height="851" key="SettingsEditor/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589635040040" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1589638856896">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1589639738568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589638856896" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589639738568" />
     <state x="768" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589634945297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -24,12 +24,12 @@ prometheus:
 livenessProbe:
   command:
     - "echo
-    - ""OK\""
+    - "\"OK\""
   probeType: "exec"
 readinessProbe:
   command:
     - "echo
-    - ""OK\""
+    - "\"OK\""
   probeType: "exec"
 postgresql:
   enabled: false
