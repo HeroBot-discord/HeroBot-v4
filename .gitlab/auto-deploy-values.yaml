@@ -23,12 +23,12 @@ prometheus:
   metrics: false
 livenessProbe:
   command:
-    - "echo
+    - "echo"
     - "\"OK\""
   probeType: "exec"
 readinessProbe:
   command:
-    - "echo
+    - "echo"
     - "\"OK\""
   probeType: "exec"
 postgresql:
