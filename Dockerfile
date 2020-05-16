@@ -6,5 +6,6 @@ RUN gradle build --no-daemon
 FROM openjdk:8-jre-slim
 WORKDIR /app
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/
+COPY run/plugins/*.jar /app/plugins
 RUN ls
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","HeroBot-1.0-SNAPSHOT-all.jar"]

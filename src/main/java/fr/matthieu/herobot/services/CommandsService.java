@@ -203,15 +203,20 @@ public class CommandsService extends Service {
                 .addField("Os", String.format("%s / %s",system.getName(), system.getVersion()), true)
                 .addField("Arch", system.getArch(), true)
                 .addField("\0", "Bot informations", false)
-                .addField("Guilds", String.format("%s Guilds",message.getJDA().getGuilds().size()), true)
-                .addField("Members", String.format("%s Members",message.getJDA().getUsers().size()), true)
+                .addField("Guilds", String.format("%s Guilds", message.getJDA().getGuilds().size()), true)
+                .addField("Members", String.format("%s Members", message.getJDA().getUsers().size()), true)
                 .addField("Channels", String.format("%s ( %s Text, %s Categories, %s Voice )",
                         total,
                         message.getJDA().getTextChannels().size(),
                         message.getJDA().getCategories().size(),
                         message.getJDA().getVoiceChannels().size()
-                        ), true);
+                ), true);
         message.sendMessage(builder.build()).queue();
+    }
+
+    @Command(name = "about")
+    public static void AboutCommand(Message message) {
+        message.getChannel().sendMessageFormat("Bonjour %s! Je suis un bot dévelopé par Matthieu!").queue();
     }
 
     @SubscribeEvent()
