@@ -7,38 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9619d9d7-0f56-4429-9134-d5f00738178a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/HeroBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/LongParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/PercentParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/ChannelParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/RoleParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/discord/UserParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/types/Percents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/HeroBot_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/HeroBot_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/plugins/PingPlugin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/run/plugins/PingPlugin.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/DiscordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/DiscordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/RconService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/CommandParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/CommandParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/IParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/IParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/SimpleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/SimpleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/annotations/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/annotations/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/IntParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/IntParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/StringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/command/parsers/StringParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ObjectInitiator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ObjectInitiator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ServicesContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/ServicesContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/classes/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/utilities/classes/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,6 +400,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="263" y="144" width="998" height="851" key="SettingsEditor/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589631135654" />
+    <state x="768" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589633115977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="768" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589633115977" />
     <state x="342" y="140" key="new project wizard" timestamp="1589484708523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
