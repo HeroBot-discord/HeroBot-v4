@@ -35,6 +35,6 @@ public class ConfigurationManager extends Service {
     }
 
     public String getPrefix() {
-        return "hb!";
+        return System.getenv("PREFIX");
     }
 }
