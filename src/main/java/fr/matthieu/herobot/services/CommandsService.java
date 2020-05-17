@@ -219,7 +219,7 @@ public class CommandsService extends Service {
 
     @Command(name = "about")
     public static void AboutCommand(Message message) {
-        message.getChannel().sendMessageFormat("Bonjour %s! Je suis un bot dévelopé par Matthieu!").queue();
+        message.getChannel().sendMessageFormat("Bonjour %s! Je suis un bot dévelopé par Matthieu!", message.getAuthor().getAsMention()).queue();
     }
 
     @SubscribeEvent()
