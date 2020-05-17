@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9619d9d7-0f56-4429-9134-d5f00738178a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/matthieu/herobot/services/CommandsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589665496634</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add plugins to Dockerfile">
+      <created>1589667059872</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589667059872</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -420,7 +427,8 @@
     <MESSAGE value="Edit helm chart values for deployment" />
     <MESSAGE value="Add new command and add new plugin (ping)" />
     <MESSAGE value="Add run folder to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add run folder to git" />
+    <MESSAGE value="Add plugins to Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add plugins to Dockerfile" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -442,10 +450,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589625229998" />
-    <state x="546" y="2" key="CommitChangelistDialog2" timestamp="1589665496072">
+    <state x="546" y="2" key="CommitChangelistDialog2" timestamp="1589667059252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="546" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589665496072" />
+    <state x="546" y="2" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589667059252" />
     <state x="827" y="270" width="602" height="656" key="EnvironmentVariablesDialog" timestamp="1589484987469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -478,10 +486,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="263" y="144" width="998" height="851" key="SettingsEditor/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589640728883" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1589665498808">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1589667069092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589665498808" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-1080.3840.2120@0.0.1920.1040" timestamp="1589667069092" />
     <state x="768" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589634945297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

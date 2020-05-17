@@ -32,6 +32,7 @@ import net.dv8tion.jda.api.hooks.SubscribeEvent;
 import javax.annotation.Nullable;
 import java.awt.*;
 import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.Duration;
@@ -172,6 +173,8 @@ public class CommandsService extends Service {
     @Command(name = "system-info")
     public void systemInfo(TextChannel message) throws InterruptedException {
         OperatingSystemMXBean system = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
+        MemoryMXBean memory = ManagementFactory.getMemoryMXBean();
+
         EmbedBuilder builder = new EmbedBuilder()
                 .setDescription("Here is some details about the bot's statistics.")
                 .setColor(new Color(55, 55, 55))
@@ -197,8 +200,8 @@ public class CommandsService extends Service {
                 .addField("CPU Load (System)", String.format("%s", Math.round(system.getSystemCpuLoad() * 100) / 100), true)
                 .addField("% Cpu used (bot)", String.format("%s", Math.round(percent * 100) / 100), true)
                 .addField("\0", "Memory Usage", false)
-                .addField("Virtual Memory Size", String.format("%s MB",system.getCommittedVirtualMemorySize() / 1024 / 1024), true)
-                .addField("Free virtual memory", String.format("%s MB",system.getFreePhysicalMemorySize() / 1024 / 1024), true)
+                .addField("Heap size", String.format("%s MB", memory.getHeapMemoryUsage().getUsed() / 1024 / 1024), true)
+                .addField("Non-Heap", String.format("%s MB", memory.getNonHeapMemoryUsage().getUsed() / 1024 / 1024), true)
                 .addField("\0", "Os Informations", false)
                 .addField("Os", String.format("%s / %s",system.getName(), system.getVersion()), true)
                 .addField("Arch", system.getArch(), true)
