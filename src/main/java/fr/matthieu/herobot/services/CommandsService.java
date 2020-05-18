@@ -203,7 +203,7 @@ public class CommandsService extends Service {
                 .addField("Heap size", String.format("%s MB", memory.getHeapMemoryUsage().getUsed() / 1024 / 1024), true)
                 .addField("Non-Heap", String.format("%s MB", memory.getNonHeapMemoryUsage().getUsed() / 1024 / 1024), true)
                 .addField("\0", "Os Informations", false)
-                .addField("Os", String.format("%s / %s",system.getName(), system.getVersion()), true)
+                .addField("Os", String.format("%s / %s", system.getName(), system.getVersion()), true)
                 .addField("Arch", system.getArch(), true)
                 .addField("\0", "Bot informations", false)
                 .addField("Guilds", String.format("%s Guilds", message.getJDA().getGuilds().size()), true)
@@ -213,7 +213,8 @@ public class CommandsService extends Service {
                         message.getJDA().getTextChannels().size(),
                         message.getJDA().getCategories().size(),
                         message.getJDA().getVoiceChannels().size()
-                ), true);
+                ), true)
+                .addField("Ping", String.format("%sms (Rest) \r%sms (WS)", message.getJDA().getRestPing(), message.getJDA().getGatewayPing()), false);
         message.sendMessage(builder.build()).queue();
     }
 

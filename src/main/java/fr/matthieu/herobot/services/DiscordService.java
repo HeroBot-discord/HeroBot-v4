@@ -35,7 +35,6 @@ public class DiscordService extends Service {
                 .setEnabledIntents(GatewayIntent.GUILD_MESSAGES)
                 .setActivity(Activity.of(Activity.ActivityType.DEFAULT, "java.exe"))
                 .setEventManager(new AnnotatedEventManager())
-                .setGuildSubscriptionsEnabled(false)
                 .build();
         client.awaitStatus(JDA.Status.CONNECTED);
     }
